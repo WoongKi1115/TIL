@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .fixed {
+            position: fixed;
+            width: 100px;
+            height: 100px;
+            border: 3px solid black;
+            bottom: 0; /*맨 아래에 달라 붙어있어라 */
+            right: 0; /*오른쪽에 달라붙어 있어라*/
+        }
+        .box {
+            width: 100px;
+            height: 100px;
+            border: 3px solid black;
+        }
+        body {
+            height: 2000px  /* 전체 body의 크기 결정. 스크롤을 내려도 fixed부분은 사라지지 않고 따라옴*/
+        }
+    </style>
+</head>
+<body>
+    <div class="fixed">
+    </div>
+    <div class="box"></div>
+</body>
+</html>

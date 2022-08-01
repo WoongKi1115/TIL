@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>선택자</title>
+    <style>
+        .a {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+        }
+        #b {
+            width: 100px;
+            height: 100px;
+            background-color: red;
+        }
+
+        ul > li {              
+            color: orange
+        }
+            
+        .c div {
+            color: green;
+            font-size: 30px; 
+        }           
+    </style>  <!--부등호면 바로 아래 자식만. class로 하면 자식의 자식 전체 다 가능.-->
+</head>
+<body>
+    <div class="a">
+        <div></div>
+        <div></div>
+        
+    </div>
+    <div id="b">
+    </div>
+    <ul>
+        <li>서울</li>  <!--같은 들여쓰기 형제태그-->
+        <li>대구</li>
+        <li>광주</li>
+    </ul>
+    <div class="c">
+        <div>
+            나는 자식이다.
+            <div>      <!--c클래스의 자식의 자식의 자식-->
+                나는 손자이다.
+                <div>
+                    나는 손자의 자식이다.
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
