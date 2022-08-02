@@ -1,0 +1,37 @@
+.out {
+  width: 900px;
+  height: 102px;
+  font-size: 0px;
+}
+.out > div {
+  width: 100px;
+  height: 100px;
+  border: 1px solid black;
+  display: inline-block;
+}
+
+.out:nth-of-type(2n) > div:nth-of-type(2n-1) {
+  background-color: black;
+}
+
+.out:nth-of-type(2n-1) > div:nth-of-type(2n) {
+  background-color: black;
+}
+
+.white_king {
+  background-image: url("Web/0802/white_king.png");
+  background-size: cover; /*요소의 크기에 맞게 이미지를 조절해서 설정해줌*/
+}
+.white_queen {
+  background-image: url("Web/0802/white_queen.png");
+  background-size: cover;
+}
+.white_rook {
+  background-image: url("Web/0802/white_rook.png");
+  background-size: cover;
+}
+.black_pawn {
+  background-image: url("Web/0802/black_pawn.png");
+  background-size: cover;
+}
+/*마지막번째 줄에 있는 div를 찾아서 거기에 5번 째 div의 background이미지를 설정하는 방법도 있음*/
