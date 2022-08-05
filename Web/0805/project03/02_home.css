@@ -1,0 +1,18 @@
+/* 02_home.css */
+/* 아래에 코드를 작성해 주세요. */
+a1 {
+  padding: 10px;
+  width: 100%;
+  text-align: center;
+}
+nav {
+  position: fixed;
+}
+footer {
+  position: fixed;
+  float: left;
+  padding-bottom: 10px;
+  width: 100%;
+  text-align: center;
+  bottom: 0;
+}
