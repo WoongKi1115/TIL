@@ -25,7 +25,7 @@ for tc in range(1, T+1):
             count = [0]*10
             for a in range(3):
                 for b in range(3):
-                    count[box[i+a][j+b]] += 1
+                    =count[box[i+a][j+b]] + 1
             for x in range(1, 10):
                 if count[x] != 1:
                     result = 0
