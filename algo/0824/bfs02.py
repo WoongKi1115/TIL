@@ -13,13 +13,14 @@ def bfs(si, sj, n):
         # 내가 현재 위치에서 방문을 몇번 할껀지 구하자.
         # 방문할 위치는 큐에 들어있고, 그 위치의 개수를 구하면 된다.
         size = len(queue)
+        count += 1
         # 탐색 회수를 이전에 내가 알아낸 큐의 크기만큼만 하도록 제한하면
         # 해당 일차에만 반복을 하도록 제한할 수 있음.
-        print(f"{count}일 차")
-        print('=============')
-        for a in range(n):
-            print(visited[a])
-        print('=============')
+        # print(f"{count}일 차")
+        # print('=============')
+        # for a in range(n):
+        #     print(visited[a])
+        # print('=============')
         for _ in range(size):
         # 현재 방문 위치 꺼내기
             i, j = queue.pop(0)
@@ -36,7 +37,7 @@ def bfs(si, sj, n):
                     # 방문 체크 하고
                     queue.append((ni, nj))
                 # 다믕에 탐색 하기 위해 큐에 다음 위치를 추가
-        count += 1
+    return count
 
 n = 10 # 10x10
 print(bfs(5,5,10)) # 시작위치는 (5,5) 2차원 배열의 크기는 10*10
