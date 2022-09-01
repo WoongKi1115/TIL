@@ -33,16 +33,14 @@ Model을 통해 데이터에 접근하고 조작.
 즉 model을 통해 데이터를 관리함.
 class를 통해 스키마를 만드는 작업.
 
-
-
 Migration(매우중요)
 makemigrations
 필수 명령어
 python manage.py makemigrations
 
-models.py에 만들어둔 스키마(설계도)를 
+models.py에 만들어둔 스키마(설계도)를
 migrations 폴더안에 0001nitial.py(최종설계도)로 바꾸어주는 과정
-데이터 베이스에 보내기 전의 최종 설계도  (아직 데이터베이스에 보내지 않음)
+데이터 베이스에 보내기 전의 최종 설계도 (아직 데이터베이스에 보내지 않음)
 mirations 폴더에 생성됨
 
 python manage.py migrate
@@ -54,9 +52,8 @@ migrate를 해야 데이터베이스와 model이 동기화가 됨.
 python manage.py showmigrations
 [x] 는 있다는 의미.
 
-python manage.py sqlmigrate articles 0001 
+python manage.py sqlmigrate articles 0001
 migrations 폴더 안의 articles 0001이 sql 문으로 바뀌어져서 나옴.
-
 
 이미 데이터베이스로 넘어간 models.py에 새로운 정보를 추가해서 업데이트하기
 
@@ -68,7 +65,7 @@ models.py에 새로 입력을 넣어줌.
 
 auto_now_add vs auto_now 비교 문제 주의
 
-orm 
+orm
 장고와 database의 언어들을 서로 번역해주는 기술
 sql을 사용하지 않고 데이터베이스를 조작할 수 있게 해줌.
 
@@ -80,7 +77,7 @@ sql을 잘 몰라도 객체지향 언어로 db조작 가능
 orm만으론 세밀한 데이터베이스 조작을 구현하기 어려움
 
 pip install ipython
-python -i 
+python -i
 주피터 노트북같이 한줄 쓰면 바로 적용
 
 pip install django-extensions
@@ -111,8 +108,7 @@ queryset
 순회가 가능한 데이터. 1개 이상의 데이터를 불러와 사용할 수 있음.
 orm을 통해 만들어진 자료형. 필터를 걸거나 정렬 수행 가능.
 
-단 데이터베이스가 단일 객체 반환시 queryset이 아닌 모델의 인스턴스로 반환 
-
+단 데이터베이스가 단일 객체 반환시 queryset이 아닌 모델의 인스턴스로 반환
 
 queryset api 익히기
 CRUD
@@ -120,13 +116,14 @@ create, read, update, delete
 
 create 방법
 1번 째 방법
+
 1. article = Article()
-    클래스를 통한 인스턴스 생성
+   클래스를 통한 인스턴스 생성
 2. article.title
-    클래스 변수 명과 같은 이름의 인스턴스 변수를 생성 후 값을 할당.
+   클래스 변수 명과 같은 이름의 인스턴스 변수를 생성 후 값을 할당.
 3. article.save()
-    인스턴스로 save 메서드 호출
-    입력했던 정보들을 데이터베이스에 올려줌
+   인스턴스로 save 메서드 호출
+   입력했던 정보들을 데이터베이스에 올려줌
 
 2번째 방법
 인스턴스 생ㅇ성ㅇ시 초기 값을 함께 작성하여 생성.
@@ -155,7 +152,7 @@ pk는 get으로 조회하는게 나음.
 
 field lookups
 특정 레코드에 대한 조건을 설정하는 방법.
-Article.objects.filter(content__ccontains='ja')
+Article.objects.filter(content\_\_ccontains='ja')
 
 update
 선 조회 후 변경 후 save()
@@ -173,14 +170,19 @@ article.delete()
 그 다음 번호로 들어감.
 
 반환시킬 때 쿼리에 제목으로 들어간 부분을 원할 때
-__str__ 을 사용하면 이름으로 나오게 만듬.
+**str** 을 사용하면 이름으로 나오게 만듬.
 db에 아무련 영향을 끼치지 않으므로 변화했어도 makemigrations 안해도 됨.
-models.py에 
-
-
-
+models.py에
 
 create 구현 위해서는 2개의 함수 필요
 글을 작성할 페이지 리턴
 'new' view function
 데이터를 받아서 db에 처리하는 함수
+
+가상환경 설정
+python -m venv ./venv
+
+source venv/Scripts/activate
+
+requirement.txt 설치
+pip install -r requirement.txt
