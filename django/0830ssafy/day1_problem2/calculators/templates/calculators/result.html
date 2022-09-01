@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+<h1>계산결과</h1>
+
+<p>{{ first }} + {{ second }} = {{ first|add:second }}</p>
+<br>
+<p>{{ first }} - {{ second }} = {{ first|add:-second }}</p>
+
+{% endblock content %}
