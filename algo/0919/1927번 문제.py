@@ -13,35 +13,38 @@ def enq(n):
 
 def deq():
     global last
-    tem = heap[1]
-    heap[1] = heap[last]
-
-    p = 1
-    c = p * 2
+    tmp = heap[1]  # 루트 백업
+    heap[1] = heap[last]  # 삭제할 노드의 키를 루트에 복사
+    last -= 1  # 마지막 노드 삭제
+    p = 1  # 루트에 옮긴 값을 자식과 비교
+    c = p * 2   # 왼쪽 자식
     while c <= last:
-        if c + 1 <= last and heap[c] > heap[c+1]:
+        # print("p, c",p, c, heap[p], heap[c])
+        # 오른쪽 자식도 있고, 오른쪽 자식이 더 크면
+        if c+1 <= last and heap[c] > heap[c+1]:
             c += 1
+        # 자식이 더 작으면 교환
         if heap[p] > heap[c]:
             heap[p], heap[c] = heap[c], heap[p]
-            p = c
-            c = p * 2
+            p = c   # 자식을 새로운 부모로
+            c = p * 2   # 왼쪽 자식
+        # 부모가 더 크면 중단
         else:
             break
-    last -= 1
-    return tem
+    return tmp
 
 N = int(input())
-heap = [0]
+heap = [-1]
 last = 0
 for _ in range(N):
     x = int(input())
     if x == 0:
-        if len(heap) == 1:
+        if last == 0:
             print(0)
         else:
             print(deq())
-            heap.pop(1)
+            # heap.pop(1)
     else:
         enq(x)
-    print(heap)
-    print('last =',last)
+    # print(heap)
+    # print('last =',last)
