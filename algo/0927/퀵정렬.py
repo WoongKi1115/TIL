@@ -1,27 +1,30 @@
-def quicksort(arr, l, r):
+T = int(input())
+
+
+def quicksort(A, l, r):
     if l < r:
-        s = partition(arr, l, r)
-        quicksort(arr, l, s - 1)
-        quicksort(arr, s + 1, r)
+        s = partition(A, l, r)
+        quicksort(A, l, s - 1)
+        quicksort(A, s + 1, r)
 
 
-def partition(arr, l, r):
-    pivot = arr[l]
-    i = l
-    j = r
+def partition(A, l, r):
+    p = A[l]
+    i, j = l, r  # i 는 왼쪽에서, j 는 오른쪽에서
     while i <= j:
-        while i <= j and arr[i] <= pivot:
+        while i <= j and A[i] <= p:
             i += 1
-        while i <= j and arr[j] >= pivot:
+        while i <= j and A[j] >= p:
             j -= 1
         if i < j:
-            arr[i], arr[j] = arr[j], arr[i]
-    arr[l], arr[j] = arr[j], arr[l]
+            A[i], A[j] = A[j], A[i]
+    A[l], A[j] = A[j], A[l]
     return j
 
-T= int(input())
-for tc in range(1, T+1):
+
+for tc in range(1, T + 1):
     N = int(input())
-    arrs = list(map(int, input().split()))
-    quicksort(arrs,0,N-1)
-    print(f"#{tc} {arrs[N//2]}")
+    arr = list(map(int, input().split()))
+    quicksort(arr, 0, N - 1)
+
+    print(f"#{tc} {arr[N // 2]}")
