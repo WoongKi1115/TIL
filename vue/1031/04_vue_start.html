@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    {{ message }}
+  </div>
+  <div>
+    {{ message }}
+  </div>
+  <!-- Vue CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+  <script>
+    // CODE HERE
+    // 1. Vue instance constructor
+    // const vm = new Vue()
+    // console.log(vm)
+
+    // 2. el
+    const app = new Vue({
+      el: '#app',
+      // 3. data
+      data: {
+        message: 'Hello, Vue!'
+      },
+
+      // 4. methods
+      methods: {
+        print: function () {
+          console.log(this.message)
+          //this는 new Vue를 정의
+          //this.$data.message로도 가능(위처럼 생략해도 가능)
+          // 다른 메서드와 변수값과 구분하기 위해서 $를 붙임. 
+        },
+
+        bye: function () {
+          this.message = 'Bye, Vue!'
+        },
+
+        // 4-1. arrow function
+        arrowBye: () => {
+          this.message = 'Arrow Function?'
+          // 화살표함수의 this는 window를 가리킴.
+          console.log(this)
+        }
+      }
+    })
+    console.log(app)
+  </script>
+</body>
+</html>
